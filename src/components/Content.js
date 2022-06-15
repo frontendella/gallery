@@ -9,7 +9,7 @@ export default function Content ({onCardClick}) {
     <main className="content">
 
       <section className="gallery content__section">
-        <h1 className="gallery__heading">Books</h1>
+        <h1 className="gallery__heading">Movies</h1>
         <ul className="gallery__list">
           {cardList.map((item, ind) => (
             <Card
