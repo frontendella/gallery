@@ -1,4 +1,7 @@
 
+import Fetch from "./components/Fetch"
+
+
 const cardList = [
     {
       link: 'https://api.lorem.space/image/movie?w=150&h=220&hash=8B7BCDC2',
