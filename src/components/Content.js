@@ -1,9 +1,11 @@
 import React from 'react'
-import {cardList} from '../images.js'
+import {cardList} from '../Images.js'
 import Card from './Card'
 
 
 export default function Content ({onCardClick}) {
+ 
+
 
   return (
     <main className="content">
@@ -15,6 +17,7 @@ export default function Content ({onCardClick}) {
             <Card
               key={item.id}
               card={item}
+              title={item.title}
               ind={ind}
               onCardClick={onCardClick}
             />
