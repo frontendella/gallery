@@ -1,5 +1,13 @@
+import '../App.css'
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.svg';
+import Navbar from './Navbar';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Favorites from '../pages/Favorites'
+import Movies from '../pages/Movies'
+import Books from '../pages/Books'
+import Albums from '../pages/Albums'
+
 // import Header from './Header'
 // import Footer from './Footer'
 // import Content from './Content'
@@ -35,34 +43,48 @@ export default function App() {
 
 let imgUrl = [
 
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=8B7BCDC2',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=500B67FB',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=A89D0DE6',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=225E6693',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=9D9539E7',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=BDC01094',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=7F5AE56A',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=4F32C4CF',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=B0E33EF4',
- 'https://api.lorem.space/image/movie?w=150&h=220&hash=2D297A22',
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=8B7BCDC2'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=500B67FB'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=A89D0DE6'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=225E6693'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=9D9539E7'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=BDC01094'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=7F5AE56A'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=4F32C4CF'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=B0E33EF4'},
+ {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=2D297A22'},
 ]
 
+let imageOne = imgUrl.forEach((one, index, array) => {
+  console.log(array[index])
+})
 
 useEffect(() => {
   
-  fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+  let image = {"imageUrl": imageOne}
+
+  fetch("https://jsonplaceholder.typicode.com/albums/1/photos",
+  {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'applicaton/json',
+    },
+
+    body: JSON.stringify(image)
+    
+  })
+  
     .then((res) => res.json())
+    .then(json => console.log(json))
     .then((json) => 
       json.map((elem, index) => ({
         id: elem.id,
         title: elem.title,
-        image: imgUrl.forEach((one, index, array) => {
-          return array[index]
-        })
+        image: elem.image
 }))
 
     )
-
     .then((finalData) => {
       setError(undefined);
       setData(finalData);
@@ -77,6 +99,15 @@ useEffect(() => {
 
   return (
     <div>
+      <Router>
+      <Navbar/>
+        <Routes>
+            <Route path='/' element={<Favorites/>} />
+            <Route path='/movies' element={<Movies/>} />'
+            <Route path='/books' element={<Books/>} />'
+            <Route path='/albums' element={<Albums/>} />'
+        </Routes>
+      </Router>
       {error && <p>Error!: {error.message}</p>}
       
       {data.map((d) => (
