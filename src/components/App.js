@@ -1,12 +1,12 @@
-import '../App.css'
-import React, { useState, useEffect } from 'react';
-import logo from '../assets/logo.svg';
-import Navbar from './Navbar';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Favorites from '../pages/Favorites'
-import Movies from '../pages/Movies'
-import Books from '../pages/Books'
-import Albums from '../pages/Albums'
+import "../App.css";
+import React, { useState, useEffect } from "react";
+import logo from "../assets/logo.svg";
+import Navbar from "./Navbar";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Favorites from "../pages/Favorites";
+import Movies from "../pages/Movies";
+import Books from "../pages/Books";
+import Albums from "../pages/Albums";
 
 // import Header from './Header'
 // import Footer from './Footer'
@@ -41,88 +41,66 @@ export default function App() {
   //   setInd(ind + 1)
   // }
 
-let imgUrl = [
 
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=8B7BCDC2'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=500B67FB'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=A89D0DE6'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=225E6693'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=9D9539E7'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=BDC01094'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=7F5AE56A'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=4F32C4CF'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=B0E33EF4'},
- {"imageUrl":'https://api.lorem.space/image/movie?w=150&h=220&hash=2D297A22'},
-]
+  useEffect(() => {
 
-let imageOne = imgUrl.forEach((one, index, array) => {
-  console.log(array[index])
-})
-
-useEffect(() => {
-  
-  let image = {"imageUrl": imageOne}
-
-  fetch("https://jsonplaceholder.typicode.com/albums/1/photos",
-  {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'applicaton/json',
-    },
-
-    body: JSON.stringify(image)
-    
-  })
-  
-    .then((res) => res.json())
-    .then(json => console.log(json))
-    .then((json) => 
-      json.map((elem, index) => ({
-        id: elem.id,
-        title: elem.title,
-        image: elem.image
-}))
-
-    )
-    .then((finalData) => {
-      setError(undefined);
-      setData(finalData);
-    })
-    .catch((e) => {
-      console.error('Errors: ', e);
-      setError(e);
-    });
-}, []);
+    fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+      .then((res) => res.json())
+      // .then((json) => console.log(json))
+      .then((json) => {
+        const data = json.map((elem, index) => {
+          const imageUrl = `https://api.lorem.space/image/movie?w=150&h=220&hash=${elem.id}`;
+          const newObject = {
+            id: elem.id,
+            title: elem.title,
+            image: imageUrl,
+          };
+          return newObject;
+        });
+        return data;
+      })
 
 
+      .then((json) => {
+        console.log(json);
+        return json;
+      })
+      .then((finalData) => {
+        setError(undefined);
+        setData(finalData);
+      })
+      .catch((e) => {
+        console.error("Errors: ", e);
+        setError(e);
+      });
+  }, []);
 
   return (
     <div>
       <Router>
-      <Navbar/>
+        <Navbar />
         <Routes>
-            <Route path='/' element={<Favorites/>} />
-            <Route path='/movies' element={<Movies/>} />'
-            <Route path='/books' element={<Books/>} />'
-            <Route path='/albums' element={<Albums/>} />'
+          <Route path='/' element={<Favorites />} />
+          <Route path='/movies' element={<Movies />} />
+          <Route path='/books' element={<Books />} />
+          <Route path='/albums' element={<Albums />} />
         </Routes>
       </Router>
       {error && <p>Error!: {error.message}</p>}
-      
+
       {data.map((d) => (
         <div
           key={d.id}
-          style={{ display: "inline-block", border: "1px solid black", margin: "10px"}}
+          style={{
+            display: 'inline-block',
+            border: '1px solid black',
+            margin: '10px',
+          }}
         >
-         
-          <img src={d.image}/>
+          <img src={d.image} />
           <p>{d.title}</p>
-          </div>
-          ))}
-          
-   </div>
-   
+        </div>
+      ))}
+    </div>
   );
 }
-
