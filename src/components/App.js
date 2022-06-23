@@ -16,8 +16,8 @@ import Albums from "../pages/Albums";
 // import Fetch from './Fetch';
 
 export default function App() {
-  const [data, setData] = useState([]);
-  const [error, setError] = useState();
+  // const [data, setData] = useState([]);
+  // const [error, setError] = useState();
   // const [selectedCard, setSelectedCard] = useState(null)
   // const [isLoading, setIsLoading] = useState(true)
   // const closePopup = () => {
@@ -42,38 +42,35 @@ export default function App() {
   // }
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
-      .then((res) => res.json())
-      // .then((json) => console.log(json))
-      .then((json) => {
-        const data = json.map((elem, index) => {
-          const imageUrl = `https://api.lorem.space/image/movie?w=150&h=220&hash=${elem.id}`;
-          const newObject = {
-            id: elem.id,
-            title: elem.title,
-            image: imageUrl,
-          };
-          return newObject;
-        });
-        return data;
-      })
-
-
-      .then((json) => {
-        console.log(json);
-        return json;
-      })
-      .then((finalData) => {
-        setError(undefined);
-        setData(finalData);
-      })
-      .catch((e) => {
-        console.error("Errors: ", e);
-        setError(e);
-      });
-  }, []);
+  //   fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       const data = json.map((elem, index) => {
+  //         const imageUrl = `https://api.lorem.space/image/album?w=150&h=220&hash=${elem.id}`;
+  //         const newObject = {
+  //           id: elem.id,
+  //           title: elem.title,
+  //           image: imageUrl,
+  //         };
+  //         return newObject;
+  //       });
+  //       return data;
+  //     })
+  //     .then((json) => {
+  //       console.log(json);
+  //       return json;
+  //     })
+  //     .then((finalData) => {
+  //       setError(undefined);
+  //       setData(finalData);
+  //     })
+  //     .catch((e) => {
+  //       console.error("Errors: ", e);
+  //       setError(e);
+  //     });
+  // }, []);
 
   return (
     <div>
@@ -86,7 +83,7 @@ export default function App() {
           <Route path='/albums' element={<Albums />} />
         </Routes>
       </Router>
-      {error && <p>Error!: {error.message}</p>}
+      {/* {error && <p>Error!: {error.message}</p>}
 
       {data.map((d) => (
         <div
@@ -100,7 +97,7 @@ export default function App() {
           <img src={d.image} />
           <p>{d.title}</p>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 }
