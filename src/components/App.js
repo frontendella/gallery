@@ -46,7 +46,6 @@ export default function App() {
 
     fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
       .then((res) => res.json())
-      // .then((json) => console.log(json))
       .then((json) => {
         const data = json.map((elem, index) => {
           const imageUrl = `https://api.lorem.space/image/movie?w=150&h=220&hash=${elem.id}`;
@@ -59,8 +58,6 @@ export default function App() {
         });
         return data;
       })
-
-
       .then((json) => {
         console.log(json);
         return json;
