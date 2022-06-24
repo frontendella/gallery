@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../styles/images.css"
 
 function Albums() {
 
@@ -35,11 +36,12 @@ function Albums() {
       });
   }, []);
   return (
-    <div className='albums'>
+    <div className='wrapper'>
+      <h1>Albums</h1>
       {error && <p>Error!: {error.message}</p>}
 
 {data.map((d) => (
-  <div
+  <div className="container"
     key={d.id}
     style={{
       display: 'inline-block',
@@ -47,12 +49,17 @@ function Albums() {
       margin: '10px',
     }}
   >
-    <img src={d.image} />
-    <p>{d.title}</p>
+    <div className="card">
+    <img className="image" src={d.image} />
+    <p className="caption">{d.title}</p>
+    </div>
   </div>
 ))}
 </div>
   )
 }
+
+
+
 
 export default Albums
