@@ -4,10 +4,6 @@ import "../styles/images.css";
 function Movies() {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
-
-
-  
-
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/albums/3/photos")
       .then((res) => res.json())
@@ -24,7 +20,7 @@ function Movies() {
         return data;
       })
       .then((json) => {
-        console.log(json);
+        // console.log(json);
         return json;
       })
       .then((finalData) => {

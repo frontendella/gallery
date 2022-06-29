@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "../styles/images.css";
+import { Card, Button, Row, Col } from "react-bootstrap";
+import "../styles/favorites.css"
 
 function Albums() {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
-
-
-  
-
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
       .then((res) => res.json())
@@ -24,7 +22,7 @@ function Albums() {
         return data;
       })
       .then((json) => {
-        console.log(json);
+        // console.log(json);
         return json;
       })
       .then((finalData) => {
@@ -52,6 +50,7 @@ function Albums() {
 
               <h6 className="item__name text--center">{d.title}</h6>
               <div className="item__description">Statham stars as Arthur Bishop, a professional assassin who specializes in making his hits look like accidents, suicides, or the acts of petty criminals.</div>
+              <p className=" heart d-inline-block"> ❤️ </p>
               </div>
               </div>
               <div>

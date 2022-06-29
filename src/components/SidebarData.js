@@ -29,6 +29,6 @@ export const SidebarData = [
         path: '/albums',
         icon: <MusicNoteIcon />,
         cName: 'nav-text'
-    },
+    }
 
 ]

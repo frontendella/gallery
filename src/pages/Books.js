@@ -1,7 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/images.css";
+import "../styles/favorites.css"
+import FavoritesContext from "../store/favorites-context";
 
-function Books() {
+
+function Books(d) {
+  const favoritesCtx = useContext(FavoritesContext)
+  const itemIsFavorite = favoritesCtx.itemIsFavorite(d.id)
+
+
+  function toggleFavoriteStatusHandler() {
+    if (itemIsFavorite) {
+      favoritesCtx.removeFavorite(d.id)
+    }
+      else {
+        favoritesCtx.addFavorite({
+          id: d.id,
+          title: d.title,
+          description: d.description,
+          image: d.image, 
+          address: d.address
+        })
+      }
+  }
+
+  
+
   const [data, setData] = useState([]);
   const [error, setError] = useState();
 
@@ -24,7 +48,7 @@ function Books() {
         return data;
       })
       .then((json) => {
-        console.log(json);
+        // (json);
         return json;
       })
       .then((finalData) => {
@@ -43,21 +67,27 @@ function Books() {
       <main className="container">
       <div className="items-list" data-style="cards">
         {data.map((d) => (
-            
-            <div className="items-list__item item">
-              <img className="item__img" src={d.image} 
-              />
-              <div className="item__info">
-              <div className="caption">
 
-              <h6 className="item__name text--center">{d.title}</h6>
-              <div className="item__description">Statham stars as Arthur Bishop, a professional assassin who specializes in making his hits look like accidents, suicides, or the acts of petty criminals.</div>
+
+              
+                <div className="items-list__item item">
+                <img className="item__img" src={d.image} 
+                />
+                <button onClick={toggleFavoriteStatusHandler}className=" heart d-inline-block"> ❤️ </button>
+                <div className="item__info">
+                <div className="caption">
+                
+                <h6 className="item__name text--center">{d.title}</h6>
+                <div className="item__description">Statham stars as Arthur Bishop, a professional assassin who specializes in making his hits look like accidents, suicides, or the acts of petty criminals.</div>
+                
+                </div>
+                </div>
+                <div>
+                </div>
               </div>
-              </div>
-              <div>
-              </div>
-            </div>
+
           // </div>
+          
         ))}
       </div>
       </main>
