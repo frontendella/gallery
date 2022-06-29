@@ -7,6 +7,7 @@ import Favorites from "../pages/Favorites";
 import Movies from "../pages/Movies";
 import Books from "../pages/Books";
 import Albums from "../pages/Albums";
+import {FavoritesContextProvider} from "../store/favorites-context"
 
 // import Header from './Header'
 // import Footer from './Footer'
@@ -73,12 +74,12 @@ export default function App() {
   // }, []);
 
   return (
-    <div>
+    <FavoritesContextProvider>
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Favorites />} />
           <Route path='/movies' element={<Movies />} />
+          <Route path='/' element={<Favorites />} />
           <Route path='/books' element={<Books />} />
           <Route path='/albums' element={<Albums />} />
         </Routes>
@@ -98,6 +99,6 @@ export default function App() {
           <p>{d.title}</p>
         </div>
       ))} */}
-    </div>
+    </FavoritesContextProvider>
   );
 }
