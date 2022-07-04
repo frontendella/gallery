@@ -154,6 +154,8 @@ a:focus {
 .items-list__item:hover,
 .items-list__item:focus {
 	background: var(--light-grey);
+	cursor: pointer;
+	transform: scale(1.1);
 }
 
 .items-list__item .item__img {
