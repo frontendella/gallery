@@ -4,7 +4,7 @@
 
 // const MoviesContextProvider = (props) => {
 //   const [movies, setMovies] = useState([]);
-//   const [myfavorites, setMyfavorites] = useState([]);
+//   const [my, setMyfavorites] = useState([]);
 //   const [loading, setLoading] = useState(true);
 
 //   useEffect(() => {
