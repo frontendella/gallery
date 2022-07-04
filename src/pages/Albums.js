@@ -4,9 +4,11 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 import "../styles/favorites.css"
 import ImagesList from "./ImagesList";
 
-function Albums() {
+const Albums = (category, number) => {
 
-  <ImagesList category="Albums" number="1" type="https://api.lorem.space/image/album?w=150&h=220&hash=$"/>
+  return (
+  <ImagesList category="Albums" number="1" />
+  )
 }
 
 export default Albums;

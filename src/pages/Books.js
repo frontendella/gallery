@@ -27,9 +27,7 @@ const Books = (category, number) => {
   // }
 
   return (
-    <>
     <ImagesList category="Books" number="2"   />
-    </>
   );
 }
 
