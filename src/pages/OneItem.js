@@ -1,21 +1,21 @@
 import { useState, useContext, useEffect } from "react";
 import ImagesList from "./ImagesList";
 
-const OneItem = ({ id, title, image }) => {
+const OneItem = ({ props }) => {
   return (
     <div>
-      <h1 className="header__title"> {category}</h1>
+      <h1 className="header__title"> {props.category}</h1>
       {/* {error && <p>Error!: {error.message}</p>} */}
       <main className="container">
         <div className="items-list" data-style="cards">
-          <div key={id} className="items-list__item item">
+          <div key={props.id} className="items-list__item item">
             <img
               className="item__img"
-              src={image}
-              onClick={handleShow}
-              alt={title}
+              src={props.image}
+              // onClick={handleShow}
+              alt={props.title}
             />
-            <i
+            {/* <i
               style={
                 ıconStatus ? { color: "rgb(207, 5, 5)" } : { color: "black" }
               }
@@ -25,10 +25,10 @@ const OneItem = ({ id, title, image }) => {
                   : "hidden heartIcon bi bi-heart-fill"
               }
               onClick={handlerIcon}
-            ></i>
+            ></i> */}
             <div className="item__info">
               <div className="caption">
-                <h6 className="item__name text--center">{title}</h6>
+                <h6 className="item__name text--center">{props.title}</h6>
                 <div className="item__description">
                   Statham stars as Arthur Bishop, a professional assassin who
                   specializes in making his hits look like accidents, suicides,
@@ -44,3 +44,5 @@ const OneItem = ({ id, title, image }) => {
     </div>
   );
 };
+
+export default OneItem

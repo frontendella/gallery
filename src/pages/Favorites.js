@@ -2,7 +2,7 @@ import React from 'react'
 
 function Favorites() {
   return (
-    <div>You don't have favorites yet</div>
+    <h3>You don't have favorites yet</h3>
   )
 }
 

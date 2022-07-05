@@ -10,33 +10,33 @@ function ImagesList({ category, number }) {
   const address = `https://jsonplaceholder.typicode.com/albums/${number}/photos`;
   const { data } = useFetch(address);
 
-  const [showStatus, setShowStatus] = useState(false);
-  const handleShow = () => setShowStatus(true);
-  const handleClose = () => setShowStatus(false);
+  // const [showStatus, setShowStatus] = useState(false);
+  // const handleShow = () => setShowStatus(true);
+  // const handleClose = () => setShowStatus(false);
 
-  const [ıconStatus, setıconStatus] = useState(false);
+  // const [ıconStatus, setıconStatus] = useState(false);
 
-  useEffect(() => {
-    if (myfavorites.includes(id)) {
-      setıconStatus(!ıconStatus);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (myfavorites.includes(id)) {
+  //     setıconStatus(!ıconStatus);
+  //   }
+  // }, []);
 
-  const handlerIcon = (e) => {
-    setıconStatus(!ıconStatus);
+  // const handlerIcon = (e) => {
+  //   setıconStatus(!ıconStatus);
 
-    if (ıconStatus) {
-      var index = myfavorites.indexOf(id);
-      myfavorites.splice(index, 1);
-      setMyfavorites(myfavorites);
+  //   if (ıconStatus) {
+  //     var index = myfavorites.indexOf(id);
+  //     myfavorites.splice(index, 1);
+  //     setMyfavorites(myfavorites);
 
-      deleteMovieToStorage(id);
-    } else {
-      setMyfavorites(myfavorites.concat([id]));
+  //     deleteMovieToStorage(id);
+  //   } else {
+  //     setMyfavorites(myfavorites.concat([id]));
 
-      addMovieToStorage(id);
-    }
-  };
+  //     addMovieToStorage(id);
+  //   }
+  // };
 
   // const favoritesCtx = useContext(FavoritesContext);
 
@@ -73,14 +73,14 @@ function ImagesList({ category, number }) {
       {
         <div className="movieList  container d-flex flex-wrap justify-content-center  mt-4">
           {data.map((item) => {
-            return (
+            // return (
               <OneItem
-                {...item}
+                // {...item}
                 id={item.id}
-                title={item.id}
+                title={item.title}
                 image={item.image}
               />
-            );
+            // );
           })}
         </div>
       }
