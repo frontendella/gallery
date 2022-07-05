@@ -1,17 +1,25 @@
 .logo {
-  width: 140px;
-  height: 110px;
-  background-image: url(../../assets/logo.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-left: 100px;
+  width: 90px;
+  height: 90px;
+  float: right;
+  /* background-image: url(../../assets/logo.svg); */
+  /* background-position: center;
+  background-repeat: no-repeat; */
+  /* background-size: cover; */
+
+  z-index: 3;
+  position: sticky;
+
 }
 
 
 @media screen and (max-width: 600px) {
   .logo {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 }
+
+
+
+

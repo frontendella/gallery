@@ -5,7 +5,7 @@ import {Link } from 'react-router-dom'
 import { SidebarData } from './SidebarData'
 import './Navbar.css'
 import { IconContext } from 'react-icons'
-
+import Header from './Header'
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
@@ -13,12 +13,17 @@ function Navbar() {
     const showSidebar = () => setSidebar(!sidebar)
   return (
       <>
+      <Header/>
       <IconContext.Provider value={{color: 'black'}}>
-            <div className="header"> 
-                <Link to="#" className='menu-bars'>
-                    <FaIcons.FaBars onClick={showSidebar}/>
+      
+            <div className="header">
+                         
+                <Link to="#" className='menu-bars' >
+                    <FaIcons.FaBars onClick={showSidebar} />
+                    
                 </Link>
             </div>
+
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className="navbar-toggle">
