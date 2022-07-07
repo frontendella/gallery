@@ -6,11 +6,13 @@ import { SidebarData } from './SidebarData'
 import './Navbar.css'
 import { IconContext } from 'react-icons'
 import Header from './Header'
+// import FavoritesContext from "../store/favorites-context";
 
 function Navbar() {
     const [sidebar, setSidebar] = useState(false)
-
     const showSidebar = () => setSidebar(!sidebar)
+
+    // const favoritesCtx = useContext(FavoritesContext);
   return (
       <>
       <Header/>
