@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const FavoritesContext = createContext({
     favorites: [],
@@ -18,10 +18,10 @@ export function FavoritesContextProvider(props) {
     }
 
 
-    function removeFavotireHandler(itemId) {
+    function removeFavoriteHandler(itemId) {
         setUserFavorites(prevUserFavorites => {
             return prevUserFavorites.filter(item => item.id !== itemId )
-        } );
+        });
 
     }
 
@@ -34,7 +34,7 @@ export function FavoritesContextProvider(props) {
         favorites: userFavorites,
         totalFavorites: userFavorites.length, 
         addFavorite: addFavoriteHandler,
-        removeFavorite: removeFavotireHandler,
+        removeFavorite: removeFavoriteHandler,
         itemIsFavorite: itemIsFavoriteHandler
     };
     return <FavoritesContext.Provider value={context}>

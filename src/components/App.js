@@ -7,15 +7,14 @@ import Favorites from "../pages/Favorites";
 import Movies from "../pages/Movies";
 import Books from "../pages/Books";
 import Albums from "../pages/Albums";
-import { FavoritesContextProvider } from "../store/favorites-context";
+
 
 // import Footer from './Footer'
 // import Content from './Content'
 
 export default function App() {
   return (
-    <FavoritesContextProvider>
-      <Router>
+      <>
         <Navbar />
         <Routes>
           <Route path="/movies" element={<Movies />} />
@@ -23,7 +22,7 @@ export default function App() {
           <Route path="/books" element={<Books />} />
           <Route path="/albums" element={<Albums />} />
         </Routes>
-      </Router>
-    </FavoritesContextProvider>
+
+     </>
   );
 }

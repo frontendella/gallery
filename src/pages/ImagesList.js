@@ -1,86 +1,40 @@
 import React, { useContext, useState, useEffect } from "react";
-// import FavoritesContext from "../store/favorites-context";
 import { useFetch } from "./useFetch";
-import { MoviesContext } from "../context/MoviesContext";
 import OneItem from "./OneItem";
+import AddFavorites from "../components/AddFavorites"
 
-function ImagesList({ category, number }) {
-  const { myfavorites, setMyfavorites, getMoviesFromStorage } =
-    useContext(MoviesContext);
-  const address = `https://jsonplaceholder.typicode.com/albums/${number}/photos`;
-  const { data } = useFetch(address);
+function ImagesList({ number, imageName, category}) {
+  const { data } = useFetch(number, imageName);
 
-  // const [showStatus, setShowStatus] = useState(false);
-  // const handleShow = () => setShowStatus(true);
-  // const handleClose = () => setShowStatus(false);
 
-  // const [ıconStatus, setıconStatus] = useState(false);
+  // function handleFavorites(id) {
+  //   alert(id);
+  // }
 
-  // useEffect(() => {
-  //   if (myfavorites.includes(id)) {
-  //     setıconStatus(!ıconStatus);
-  //   }
-  // }, []);
-
-  // const handlerIcon = (e) => {
-  //   setıconStatus(!ıconStatus);
-
-  //   if (ıconStatus) {
-  //     var index = myfavorites.indexOf(id);
-  //     myfavorites.splice(index, 1);
-  //     setMyfavorites(myfavorites);
-
-  //     deleteMovieToStorage(id);
-  //   } else {
-  //     setMyfavorites(myfavorites.concat([id]));
-
-  //     addMovieToStorage(id);
-  //   }
-  // };
-
-  // const favoritesCtx = useContext(FavoritesContext);
-
-  // const itemIsFavorite = favoritesCtx.itemIsFavorite(props.id)
-
-  // function toggleFavoriteStatusHandler() {
-  //   if (itemIsFavorite) {
-  //     favoritesCtx.removeFavorite(props.id)
-  //   } else {
-  //     favoritesCtx.addFavorite(
-  //       {
-  //         id: props.id,
-  //         title: props.title,
-  //         image: props.image
-  //       }
-  //     )
-  //   }}
-
-  const deleteMovieToStorage = (id) => {
-    const FavoriList = getMoviesFromStorage();
-    var index = FavoriList.indexOf(id);
-    FavoriList.splice(index, 1);
-    localStorage.setItem("myFavoriList", JSON.stringify(FavoriList));
-  };
-  const addMovieToStorage = (id) => {
-    const FavoriList = getMoviesFromStorage();
-
-    FavoriList.push(id);
-    localStorage.setItem("myFavoriList", JSON.stringify(FavoriList));
-  };
+  // console.log(data);
+  if (!data.length) return <p>"No data"</p>;
 
   return (
     <>
+    <h1 className="header__title"> {category}</h1>
       {
+        
         <div className="movieList  container d-flex flex-wrap justify-content-center  mt-4">
           {data.map((item) => {
-            // return (
+            // return <p >{item.title}</p>
+            
+            return (
+              <>
               <OneItem
-                // {...item}
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 image={item.image}
+                FavoriteComponent = {AddFavorites}
               />
-            // );
+              
+            </>
+            );
           })}
         </div>
       }
