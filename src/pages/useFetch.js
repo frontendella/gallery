@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
-export const useFetch = (address) => {
-    const [data, setData] = useState([]);
-    const [error, setError] = useState();
-    const type="https://api.lorem.space/image/book?w=150&h=220&hash=$"
+export const useFetch = ( number, imageName) => {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState();
+  
+  const address = `https://jsonplaceholder.typicode.com/albums/${number}/photos`;
+  const path = `https://api.lorem.space/image/${imageName}?w=150&h=220&hash=`;
 
 
-    const fetchData = async () => {
-
-     await fetch(address)
+  const fetchData = async () => {
+    await fetch(address)
       .then((res) => res.json())
       .then((json) => {
         const data = json.map((elem) => {
-          
-          const imageUrl = `${type}${elem.id}`
-          
+          const imageUrl = `${path}${elem.id}`;
+
           const newObject = {
             id: elem.id,
             title: elem.title,
@@ -33,14 +33,11 @@ export const useFetch = (address) => {
         console.error("Errors: ", e);
         setError(e);
       });
-    }
+  };
 
-    useEffect(() => {
-        fetchData();
+  useEffect(() => {
+    fetchData();
   }, [address]);
 
-
-  return {data}
-
-}
-
+  return { data };
+};

@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
-import "../styles/images.css";
-import "../styles/favorites.css";
-// import FavoritesContext from "../store/favorites-context";
+import React, { useState, useEffect, useContext, createContext } from "react";
+import FavoritesContext from "../store/favorites-context";
 import ImagesList from "./ImagesList";
+import { useFetch } from "./useFetch";
+import OneItem from "./OneItem";
 
-
-const Books = (category, number) => {
-  
-
-
+const Books = ( number, imageName, category) => {
   // const favoritesCtx = useContext(FavoritesContext);
   // const itemIsFavorite = favoritesCtx.itemIsFavorite();
 
@@ -22,13 +18,11 @@ const Books = (category, number) => {
   //       title: item.title,
   //       image: item.image,
   //     });
-    
+
   //   }
   // }
 
-  return (
-    <ImagesList category="Books" number="2"   />
-  );
-}
+  return <ImagesList number="2" imageName="book" category="Books"/>;
+};
 
 export default Books;
