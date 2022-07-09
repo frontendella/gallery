@@ -3,21 +3,27 @@ import ImagesList from "../pages/ImagesList";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import FavoritesContext from "../store/favorites-context";
 
-const AddFavorites = (id, title, image) => {
+
+const AddFavorites = (props) => {
+
   const favoritesCtx = useContext(FavoritesContext);
 
-  const itemIsFavorite=favoritesCtx.itemIsFavorite(id)
+  const itemIsFavorite=favoritesCtx.itemIsFavorite(props.id)
 
+// console.log(itemIsFavorite)
   function toggleFavoriteStatusHandler() {
       if(itemIsFavorite){
-        favoritesCtx.removeFavorite(id)
+        favoritesCtx.removeFavorite(props.id)
       } else {
         favoritesCtx.addFavorite({
-          id: id,
-          title: title,
-          image: image
+          id: props.id,
+          title: props.title,
+          image: props.image
         })
+        
       }
+
+ 
   }
 
   return (

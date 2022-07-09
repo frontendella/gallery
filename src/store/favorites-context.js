@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const FavoritesContext = createContext({
     favorites: [],
@@ -14,7 +14,13 @@ export function FavoritesContextProvider(props) {
     function addFavoriteHandler(favoriteItem) {
         setUserFavorites((prevUserFavorites) => {
             return prevUserFavorites.concat(favoriteItem)
+            
+            
         });
+        
+        // useEffect(() => {
+        //     localStorage.setItem(userFavorites, JSON.stringify(userFavorites))
+        // }, [userFavorites])
     }
 
 
