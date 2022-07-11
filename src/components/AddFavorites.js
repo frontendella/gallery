@@ -42,7 +42,7 @@ const AddFavorites = (props) => {
       </div>
       <div className="remove" >
         {
-          <AiFillHeart size={30} color="black" onClick={() => removeFavoriteHandler((props))} />
+          <AiFillHeart size={30} color="black" onClick={() => removeFavoriteHandler(props)} />
           //  itemIsFavorite ? <AiFillHeart size={30} color="#e56a77"/> : <AiOutlineHeart size={30} />
         }
       </div>

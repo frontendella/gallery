@@ -15,6 +15,8 @@ const initialState = {
 //create context
 export const FavoritesContext = createContext(initialState);
 
+
+
 // const FavoritesContext = createContext({
 //     favorites: [],
 //     totalFavorites: 0,

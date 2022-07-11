@@ -8,8 +8,8 @@ export default (state, action) => {
     case "REMOVE_ITEM_FROM_FAVORITES":
       return {
         ...state,
-        favorties: state.favorites.filter(
-          (item) => item.id !== action.payload
+        favorites: state.favorites.filter(
+          (item) => item.id !== action.payload.id
         ),
       };
 
