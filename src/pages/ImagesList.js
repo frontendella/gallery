@@ -29,7 +29,7 @@ function ImagesList({ number, imageName, category }) {
             return (
               
               <OneItem
-                key={item.id}
+                key={item.url}
                 id={item.id}
                 title={item.title}
                 image={item.image}
