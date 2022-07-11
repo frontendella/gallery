@@ -1,32 +1,33 @@
 import { useContext, useState, useEffect } from "react";
-// import FavoritesContext from "../store/favorites-context";
+
 import ImagesList from "./ImagesList";
 import "../styles/favorites.css";
 import "../styles/images.css";
 import AddFavorites from "../components/AddFavorites";
-
+import {FavoritesContext} from "../store/favorites-context";
 
 
 const OneItem = (props) => {
-  const { id, title, image } = props;
+  const { id, title, image, url } = props;
   // const AddFavorites = props.AddFavorites;
+  
 
   return (
     <div>
       {/* {error && <p>Error!: {error.message}</p>} */}
       
-      <main className="">
-        <div className="items-list" data-style="cards">
-          <div key={id} className="items-list__item item">
+
+        <div className="items-list">
+          <div key={url} className="items-list__item item">
             <img
-              key={id}
+              key={url}
               className="item__img"
               src={image}
               // onClick={handlerIcon}
               alt={title}
             />
             
-            <AddFavorites key={id} image={image} id={id} title={title} />
+            <AddFavorites key={id} image={image} id={id} title={title}  />
 
             <div className="item__info">
               <div className="caption">
@@ -42,7 +43,7 @@ const OneItem = (props) => {
             <div></div>
           </div>
         </div>
-      </main>
+
     </div>
   );
 };

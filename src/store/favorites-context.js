@@ -1,52 +1,59 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useReducer,
+} from "react";
+import AppReducer from "./AppReducer";
 
-const FavoritesContext = createContext({
-    favorites: [],
-    totalFavorites: 0,
-    addFavorite: (favoriteItem) => {},
-    removeFavorite: (itemId) => {},
-    itemIsFavorite: (itemId) => {}
-});
+const initialState = {
+  favorites: localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [], 
+  totalFavorites: 0,
+};
 
-export function FavoritesContextProvider(props) {
-    const [userFavorites,setUserFavorites] = useState([]);
+//create context
+export const FavoritesContext = createContext(initialState);
 
-    function addFavoriteHandler(favoriteItem) {
-        setUserFavorites((prevUserFavorites) => {
-            return prevUserFavorites.concat(favoriteItem)
-            
-            
-        });
-        
-        // useEffect(() => {
-        //     localStorage.setItem(userFavorites, JSON.stringify(userFavorites))
-        // }, [userFavorites])
-    }
+// const FavoritesContext = createContext({
+//     favorites: [],
+//     totalFavorites: 0,
+//     addFavorite: (favoriteItem) => {},
+//     removeFavorite: (itemId) => {},
+//     itemIsFavorite: (itemId) => {}
+// });
 
+export const FavoritesContextProvider = (props) => {
+  const [state, dispatch] = useReducer(AppReducer, initialState);
 
-    function removeFavoriteHandler(itemId) {
-        setUserFavorites(prevUserFavorites => {
-            return prevUserFavorites.filter(item => item.id !== itemId )
-        });
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(state.favorites)
+     );
+  }, [state]);
 
-    }
+  const addFavoriteHandler = (id) => {
+    dispatch({ type: "ADD_ITEM_TO_FAVORITES", payload: id });
+  };
 
-    function itemIsFavoriteHandler(itemId) {
-        return userFavorites.some(item => item.id === itemId)
-    }
+  const removeFavoriteHandler = (id) => {
+      dispatch({type: "REMOVE_ITEM_FROM_FAVORITES", payload: id  });
+  };
 
 
-    const context ={
-        favorites: userFavorites,
-        totalFavorites: userFavorites.length, 
-        addFavorite: addFavoriteHandler,
-        removeFavorite: removeFavoriteHandler,
-        itemIsFavorite: itemIsFavoriteHandler
-    };
-    return <FavoritesContext.Provider value={context}>
-        {props.children}
+  return (
+    <FavoritesContext.Provider
+      value={{
+        favorites: state.favorites,
+        totalFavorites: state.totalFavorites,
+        addFavoriteHandler,
+        removeFavoriteHandler, 
+      }}
+    >
+      {props.children}
     </FavoritesContext.Provider>
+  );
 
-}
+ 
+};
 
-export default FavoritesContext;
+

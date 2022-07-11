@@ -1,10 +1,10 @@
 import "../App.css";
 import React, { useState, useEffect } from "react";
-
+import {FavoritesContextProvider} from "../store/favorites-context"
 import logo from "../assets/logo.svg";
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Favorites from "../pages/Favorites";
+import {Favorites} from "../pages/Favorites";
 import Movies from "../pages/Movies";
 import Books from "../pages/Books";
 import Albums from "../pages/Albums";
@@ -15,7 +15,7 @@ import Albums from "../pages/Albums";
 
 export default function App() {
   return (
-      <>
+      <FavoritesContextProvider>
         <Navbar />
         <Routes>
           <Route path="/movies" element={<Movies />} />
@@ -24,6 +24,6 @@ export default function App() {
           <Route path="/albums" element={<Albums />} />
         </Routes>
 
-     </>
+     </FavoritesContextProvider>
   );
 }
