@@ -1,0 +1,49 @@
+
+.modal-header {
+    border-bottom: none;
+}
+
+.movie_detail {
+    display: flex;
+    height: 100%;
+    padding: 1rem 0.2rem;
+}
+
+.movie_detail section:nth-child(1) {
+    margin-right: 2.4rem;
+    position: relative;
+}
+
+.movie_detail img {
+    width: 270px;
+    height: 400px;
+}
+
+.movie_detail section:nth-child(2) {
+    padding-right: 5px;
+}
+
+.modal-content {
+    height: auto;
+    padding: 1rem;
+}
+
+.modal-body {
+    max-width: 800px;
+    margin-top: 4rem;
+}
+
+.movie_title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.7rem;
+    letter-spacing: 0.8px;
+    color: var(--primary);
+    font-family: 'Acme', sans-serif;
+}
+.btn-close {
+    box-shadow: none !important;
+    width: 1.3em;
+    height: 1.3em;
+}

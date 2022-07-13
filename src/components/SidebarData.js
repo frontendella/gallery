@@ -4,10 +4,12 @@ import {FilmIcon} from '@heroicons/react/solid'
 import {HeartIcon} from '@heroicons/react/solid'
 import {BookOpenIcon} from '@heroicons/react/outline'
 import {MusicNoteIcon} from '@heroicons/react/solid'
+// import { initialState } from "../store/favorites-context"
 
 export const SidebarData = [
+    // ${totalFavorites}
     {
-        title: 'Favorites',
+        title: 'Favorites' ,
         path: '/',
         icon: <HeartIcon/>,
         cName: 'nav-text'

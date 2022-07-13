@@ -7,13 +7,15 @@ import {
 } from "react";
 import AppReducer from "./AppReducer";
 
-const initialState = {
+export const initialState = {
   favorites: localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [], 
   totalFavorites: 0,
 };
 
 //create context
 export const FavoritesContext = createContext(initialState);
+
+
 
 // const FavoritesContext = createContext({
 //     favorites: [],
@@ -31,12 +33,14 @@ export const FavoritesContextProvider = (props) => {
      );
   }, [state]);
 
-  const addFavoriteHandler = (id) => {
+  function addFavoriteHandler(id) {
     dispatch({ type: "ADD_ITEM_TO_FAVORITES", payload: id });
+    // dispatch({ type: "increment" })
   };
 
-  const removeFavoriteHandler = (id) => {
+   function removeFavoriteHandler(id) {
       dispatch({type: "REMOVE_ITEM_FROM_FAVORITES", payload: id  });
+      // dispatch({ type: "decrement" });
   };
 
 
