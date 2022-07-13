@@ -5,7 +5,7 @@ import "../styles/blocks/logo.css"
 export default function Header () {
     return (
       <header>
-          <a  href="#" aria-label="Main"><img className="logo" src={logo}  alt="Logo"/></a>
+          <a  href="/" aria-label="Main"><img className="logo" src={logo}  alt="Logo"/></a>
       </header>
     )
   }
