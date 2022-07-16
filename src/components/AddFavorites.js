@@ -5,6 +5,7 @@ import {
   removeFavoriteHandler,
 } from "../context/favorites-context";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import favorites from "../styles/favorites.css"
 
 const AddFavorites = (props) => {
   const { favorites, addFavoriteHandler, removeFavoriteHandler } =
@@ -24,11 +25,17 @@ const AddFavorites = (props) => {
   }
 
   return (
-    <div onClick={() => toggleFavoriteStatusHandler(props)}>
+    <div className="toggelFavorite" onClick={() => toggleFavoriteStatusHandler(props)} >
       {itemIsFavorite ? (
-        <AiFillHeart size={30} color="#e56a77" />
+        <AiFillHeart size={50} color="#e56a77" style={{
+          stroke: 'black',
+          strokeWidth: 35
+          }} />
       ) : (
-        <AiOutlineHeart size={30} />
+        <AiOutlineHeart size={50} style={{
+          stroke: 'red',
+          strokeWidth: 20
+          }}   />
       )}
     </div>
   );

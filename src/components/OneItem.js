@@ -1,5 +1,6 @@
 import { useState } from "react";
 import AddFavorites from "./AddFavorites";
+import {Card, Button, Badge} from 'react-bootstrap';
 import { Modal } from "react-bootstrap";
 import "../styles/blocks/modal.css";
 import "../styles/images.css";
@@ -13,10 +14,10 @@ const OneItem = (props) => {
   const handleClose = () => setShowStatus(false);
 
   return (
-    <div>
+    <Card style={{width: '100%', marginBottom: '20px'}}>
       <div className="items-list">
         <div key={url} className="items-list__item item">
-          <img
+          <Card.Img
             className="item__img"
             key={url}
             id={id}
@@ -30,7 +31,6 @@ const OneItem = (props) => {
           <div>
             <div>
               <h6 className="item__name text--center">{title}</h6>
-
               <div className="item__description">
                 Statham stars as Arthur Bishop, a professional assassin who
                 specializes in making his hits look like accidents, suicides, or
@@ -53,7 +53,6 @@ const OneItem = (props) => {
                 key={url}
                 id={id}
                 src={image}
-                // onClick={handlerIcon}
                 alt={title}
               />
             </section>
@@ -64,7 +63,7 @@ const OneItem = (props) => {
           </div>
         </Modal.Body>
       </Modal>
-    </div>
+    </Card>
   );
 };
 
