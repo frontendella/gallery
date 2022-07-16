@@ -1,17 +1,12 @@
-import "../App.css";
-import React, { useState, useEffect } from "react";
-import {FavoritesContextProvider} from "../store/favorites-context"
-import logo from "../assets/logo.svg";
-import Navbar from "./Navbar";
+import "./styles/App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {FavoritesContextProvider} from "./context/favorites-context"
+import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import {Favorites} from "../pages/Favorites";
-import Movies from "../pages/Movies";
-import Books from "../pages/Books";
-import Albums from "../pages/Albums";
-
-
-// import Footer from './Footer'
-// import Content from './Content'
+import {Favorites} from "./pages/Favorites";
+import Movies from "./pages/Movies";
+import Books from "./pages/Books";
+import Albums from "./pages/Albums";
 
 export default function App() {
   return (

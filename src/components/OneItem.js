@@ -1,16 +1,11 @@
-import { useContext, useState, useEffect } from "react";
-
-import ImagesList from "./ImagesList";
+import { useState } from "react";
+import AddFavorites from "./AddFavorites";
+import { Modal } from "react-bootstrap";
 import "../styles/blocks/modal.css";
-import "../styles/favorites.css";
 import "../styles/images.css";
-import AddFavorites from "../components/AddFavorites";
-import { FavoritesContext } from "../store/favorites-context";
-import { Modal,  } from "react-bootstrap";
 
 const OneItem = (props) => {
   const { id, title, image, url } = props;
-  // const AddFavorites = props.AddFavorites;
 
   const [showStatus, setShowStatus] = useState(false);
 
@@ -19,8 +14,6 @@ const OneItem = (props) => {
 
   return (
     <div>
-      {/* {error && <p>Error!: {error.message}</p>} */}
-
       <div className="items-list">
         <div key={url} className="items-list__item item">
           <img
@@ -28,15 +21,14 @@ const OneItem = (props) => {
             key={url}
             id={id}
             src={image}
-            // onClick={handlerIcon}
             alt={title}
-            onClick = {handleShow }
+            onClick={handleShow}
           />
 
           <AddFavorites key={id} image={image} id={id} title={title} />
 
-          <div className="item__info">
-            <div className="caption">
+          <div>
+            <div>
               <h6 className="item__name text--center">{title}</h6>
 
               <div className="item__description">
@@ -50,13 +42,11 @@ const OneItem = (props) => {
         </div>
       </div>
 
-      <Modal show={showStatus} onHide={handleClose} className="modal-body">
-        <Modal.Header closeButton>
-
-        </Modal.Header>
+      <Modal show={showStatus} onHide={handleClose}>
+        <Modal.Header closeButton></Modal.Header>
 
         <Modal.Body>
-          <div className="movie_detail">
+          <div>
             <section>
               <img
                 className="item__img"
@@ -69,7 +59,7 @@ const OneItem = (props) => {
             </section>
 
             <section className="modal-content">
-              <div className="movie_title">{title}</div>
+              <div>{title}</div>
             </section>
           </div>
         </Modal.Body>

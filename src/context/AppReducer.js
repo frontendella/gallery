@@ -14,8 +14,8 @@ export default (state, action) => {
       };
     case "increment":
       return { totalFavorites: state.totalFavorites + 1 };
-      case "decrement":
-        return { totalFavorites: state.totalFavorites - 1 };
+    case "decrement":
+      return { totalFavorites: state.totalFavorites - 1 };
 
     default:
       return state;

@@ -1,28 +1,21 @@
+import { FavoritesContext } from "../context/favorites-context";
 import { useContext } from "react";
-import ImagesList from "./ImagesList";
-import { FavoritesContext } from "../store/favorites-context";
 import AddFavorites from "../components/AddFavorites";
-import OneItem from "./OneItem";
-import "../styles/favorites.css";
 import "../styles/images.css";
 
 export const Favorites = () => {
   const { favorites } = useContext(FavoritesContext);
-
   return (
     <div>
       <h1 className="header__title"> Favorites </h1>
-
       {favorites.length > 0 ? (
-        <div className="items-list">
+        <div>
           {favorites.map((item) => (
-            <div className="items-list__item item">
+            <div>
               <img
                 key={item.url}
                 id={item.id}
-                className="item__img"
                 src={item.image}
-                // onClick={handlerIcon}
                 alt={item.title}
               />
               <AddFavorites
@@ -31,12 +24,11 @@ export const Favorites = () => {
                 id={item.id}
                 title={item.title}
               />
+              <div>
+                <div>
+                  <h6>{item.title}</h6>
 
-              <div className="item__info">
-                <div className="caption">
-                  <h6 className="item__name text--center">{item.title}</h6>
-
-                  <div className="item__description">
+                  <div>
                     Statham stars as Arthur Bishop, a professional assassin who
                     specializes in making his hits look like accidents,
                     suicides, or the acts of petty criminals.
@@ -47,7 +39,11 @@ export const Favorites = () => {
           ))}
         </div>
       ) : (
-        <h2 className="header__title" > <br/>No movies in your list! Add some!</h2>
+        <h2 className="header__title">
+          {" "}
+          <br />
+          No items in your favorite's list! Add some!
+        </h2>
       )}
     </div>
   );

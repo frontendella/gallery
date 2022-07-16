@@ -1,11 +1,10 @@
-@import url(./styles/style.css);
+@import url(./styles/blocks/style.css);
 @import url(./styles/fonts.css);
-
 @import url(./styles/blocks/content.css);
-@import url(./styles/blocks/header.css);
+/* @import url(./styles/blocks/header.css); */
 @import url(./styles/blocks/page.css);
 @import url(./styles/blocks/footer.css);
-@import url(./styles/blocks/gallery.css);
-@import url(./styles/blocks/item.css);
+/* @import url(./styles/blocks/gallery.css); */
+/* @import url(./styles/item.css); */
 @import url(./styles/blocks/logo.css);
-@import url(./styles/blocks/popup.css);
+

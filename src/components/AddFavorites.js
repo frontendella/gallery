@@ -1,22 +1,15 @@
-import { useContext, useState, useEffect } from "react";
-import { FavoritesContext } from "../store/favorites-context";
+import { useContext } from "react";
+import { FavoritesContext } from "../context/favorites-context";
 import {
   addFavoriteHandler,
   removeFavoriteHandler,
-} from "../store/favorites-context";
-import ImagesList from "../pages/ImagesList";
+} from "../context/favorites-context";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-
-import { Alert } from "react-bootstrap";
-// import Favorites from "../pages/Favorites";
 
 const AddFavorites = (props) => {
   const { favorites, addFavoriteHandler, removeFavoriteHandler } =
     useContext(FavoritesContext);
-
-  // const favoritesListDisabled = storedFavorites ? true : false;
-
-  let itemIsFavorite = favorites.find((Object) => Object.id === props.id);
+  let itemIsFavorite = favorites.find((item) => item.id === props.id);
 
   function toggleFavoriteStatusHandler() {
     if (itemIsFavorite) {
@@ -42,11 +35,3 @@ const AddFavorites = (props) => {
 };
 
 export default AddFavorites;
-{
-  /* <AiFillHeart
-size={50}
-color="#e56a77"
-
-onClick={() => addFavoriteHandler(props)}
-/> */
-}
