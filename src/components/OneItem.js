@@ -14,7 +14,7 @@ const OneItem = (props) => {
   const handleClose = () => setShowStatus(false);
 
   return (
-    <Card style={{width: '100%', marginBottom: '20px'}}>
+    <Card style={{width: '30%', marginBottom: '20px', marginRight: '30px', background: 'none'}}>
       <div className="items-list">
         <div key={url} className="items-list__item item">
           <Card.Img

@@ -2,7 +2,6 @@ import { useFetch } from "./useFetch";
 import OneItem from "./OneItem";
 import {Container} from 'react-bootstrap';
 
-
 function ImagesList({ number, imageName, category }) {
   const { data } = useFetch(number, imageName);
   return (
@@ -10,7 +9,7 @@ function ImagesList({ number, imageName, category }) {
       <h1 className="header__title">{category}</h1>
       {
 
-      <div>
+      <div className="itemlist">
           {data.map((item) => {
             return (
               <OneItem

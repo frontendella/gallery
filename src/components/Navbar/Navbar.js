@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import { FavoritesContext } from "../../context/favorites-context";
 import { Link } from "react-router-dom";
 import { SidebarData } from "../../data/SidebarData";
-import Header from "../Header";
 import { IconContext } from "react-icons";
 import { HeartIcon } from "@heroicons/react/solid";
+import logo from "../../assets/logo.svg";
+import "../../styles/blocks/logo.css";
 import "../../styles/App.css";
 import "./Navbar.css";
 
@@ -21,13 +22,17 @@ function Navbar() {
 
   return (
     <>
-      <Header />
       <IconContext.Provider value={{ color: "black" }}>
-        <div className="header">
+        {/* <div className="header">
           <Link to="#" className="menu-bars"></Link>
-        </div>
+        </div> */}
 
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <nav className="sidebar">
+        <header>
+            <a href="/">
+              <img className="logo" src={logo} alt="Logo" />
+            </a>
+          </header>
           <ul>
             <li>
               <Link to="/">

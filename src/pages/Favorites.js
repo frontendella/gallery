@@ -1,18 +1,21 @@
 import { FavoritesContext } from "../context/favorites-context";
 import { useContext } from "react";
 import AddFavorites from "../components/AddFavorites";
+import {Card, Button, Badge} from 'react-bootstrap';
 import "../styles/images.css";
+import { Modal } from "react-bootstrap";
 
 export const Favorites = () => {
   const { favorites } = useContext(FavoritesContext);
   return (
-    <div>
+    <>
       <h1 className="header__title"> Favorites </h1>
       {favorites.length > 0 ? (
-        <div>
+        <div className="items-list">
           {favorites.map((item) => (
-            <div>
-              <img
+            <div className="items-list__item item">
+              <Card.Img
+               className="item__img"
                 key={item.url}
                 id={item.id}
                 src={item.image}
@@ -25,10 +28,10 @@ export const Favorites = () => {
                 title={item.title}
               />
               <div>
-                <div>
+                <div className="item__name text--center">
                   <h6>{item.title}</h6>
 
-                  <div>
+                  <div className="item__description">
                     Statham stars as Arthur Bishop, a professional assassin who
                     specializes in making his hits look like accidents,
                     suicides, or the acts of petty criminals.
@@ -37,6 +40,7 @@ export const Favorites = () => {
               </div>
             </div>
           ))}
+         
         </div>
       ) : (
         <h2 className="header__title">
@@ -45,6 +49,7 @@ export const Favorites = () => {
           No items in your favorite's list! Add some!
         </h2>
       )}
-    </div>
+      
+ </>
   );
 };

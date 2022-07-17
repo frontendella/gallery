@@ -7,12 +7,13 @@ import {MusicNoteIcon} from '@heroicons/react/solid'
 // import { initialState } from "../store/favorites-context"
 
 export const SidebarData = [
-    // ${totalFavorites}
+
 
     {
         title: 'Movies',
         path: '/movies',
         icon: <FilmIcon/>,
+
     },
     {
         title: 'Books',
