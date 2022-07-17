@@ -33,7 +33,7 @@ function Navbar() {
           <ul className="navbar-nav">
             <li className="nav-item" >
               <Link to="/" className="nav-link">
-                <HeartIcon  stroke="black" color="#e56a77"  /> <span  className="link-text">{FavoritesLength}  {Favorites}</span>
+                <HeartIcon stroke="black" color="#e56a77"  /> <span  className="link-text">{FavoritesLength}  {Favorites}</span>
               </Link>
             </li>
             {SidebarData.map((item, index) => {

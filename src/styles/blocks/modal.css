@@ -1,60 +1,31 @@
-
-.modal-header {
-    border-bottom: none;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap");
 .item_detail {
-    display: flex;
-    height: 100%;
-    padding: 1rem 0.2rem;
+  display: flex;
+  height: 100%;
+  padding: 1rem 0.2rem;
 }
 
 .item_detail section:nth-child(1) {
-    margin-right: 2.4rem;
-    position: relative;
+  margin-right: 2.4rem;
+  position: relative;
 }
-
-.item__description {
-    font-family: 'IBM Plex Sans KR', sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-}
-
 
 .item_detail img {
-    width: 270px;
-    height: 400px;
-}
-
-.item_detail section:nth-child(2) {
-    padding-right: 5px;
-}
-
-.item-content {
-    height: auto;
-    padding: 1rem;
-}
-
-.item-body {
-    max-width: 800px;
-    margin-top: 4rem;
-}
-
-.modal-body {
-    overflow: auto;
+  width: 270px;
+  height: 400px;
 }
 
 .item_title {
-    margin-bottom: 2rem;
-    text-align: start;
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: .5px;
-    /* color: var(--primary);
-    font-family: "Acme",sans-serif; */
+  margin-bottom: 2rem;
+  text-align: start;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  margin-top: 10rem;
+  font-family: "Acme";
 }
 .btn-close {
-    box-shadow: none !important;
-    width: 1.3em;
-    height: 1.3em;
+  box-shadow: none !important;
+  width: 1.3em;
+  height: 1.3em;
 }
