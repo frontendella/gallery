@@ -4,4 +4,4 @@ Ability to "Like" the image and add it to "Favorites" category
 
 
 
-<img width="1580" alt="Screen Shot 2022-06-25 at 8 46 17 PM" src="file:///Users/ellaryukhina/Desktop/Screen%20Shot%202022-07-16%20at%2011.43.54%20PM.png">
+<img width="1560" alt="Screen Shot 2022-07-16 at 11 43 54 PM" src="https://user-images.githubusercontent.com/82247833/179387311-68b5b5b3-578d-4ea6-b31f-693a1ffd20f9.png">
