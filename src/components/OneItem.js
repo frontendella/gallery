@@ -1,6 +1,6 @@
 import { useState } from "react";
 import AddFavorites from "./AddFavorites";
-import {Card, Button, Badge} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import { Modal } from "react-bootstrap";
 import "../styles/blocks/modal.css";
 import "../styles/images.css";
@@ -14,8 +14,8 @@ const OneItem = (props) => {
   const handleClose = () => setShowStatus(false);
 
   return (
-    <Card style={{width: '30%', marginBottom: '20px', marginRight: '30px', background: 'none'}}>
-      <div className="items-list">
+    <>
+
         <div key={url} className="items-list__item item">
           <Card.Img
             className="item__img"
@@ -38,15 +38,14 @@ const OneItem = (props) => {
               </div>
             </div>
           </div>
-          <div></div>
-        </div>
+
       </div>
 
       <Modal show={showStatus} onHide={handleClose}>
         <Modal.Header closeButton></Modal.Header>
 
-        <Modal.Body>
-          <div>
+        <Modal.Body  className="modal-content">
+          <div className="item_detail">
             <section>
               <img
                 className="item__img"
@@ -57,13 +56,13 @@ const OneItem = (props) => {
               />
             </section>
 
-            <section className="modal-content">
-              <div>{title}</div>
+            <section>
+              <div className="item_title">{title}</div>
             </section>
           </div>
         </Modal.Body>
       </Modal>
-    </Card>
+</>
   );
 };
 
