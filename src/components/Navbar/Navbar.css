@@ -1,7 +1,6 @@
 :root {
   /* colors */
-  --blue: #098ff6;
-  --light-blue: #6fc2f3;
+
   --grey: #9eacb5;
   --dark-grey: #767f83;
   --light-grey: #dee1e2;
@@ -11,43 +10,39 @@
   --roboto: "Roboto", sans-serif;
 }
 
-
-.menu-bars {
+/* .menu-bars {
   margin-left: 2rem;
   font-size: 2rem;
   background: none;
-}
+} */
 
 .sidebar {
   width: 13rem;
   height: 100vh;
   position: fixed;
   left: 0;
-
   z-index: 1;
   padding-top: 170px;
   background-color: white;
   display: flex;
   justify-content: center;
   margin-top: -2px;
+  overflow: auto;
 }
-.sidebar a {
+.sidebar a.nav-link {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
   font-size: 15px;
   color: #818181;
-  display: block;
+ 
   
 }
 
 
-.sidebar li:hover {
+ul.navbar-nav a:hover {
+  color: black !important;
   background-color: #f3f4f6;
-  width: 110%
 }
-
-
-
 
 .navbar-nav {
   list-style: none;
@@ -55,7 +50,7 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: center
+  align-items: center;
 }
 
 .nav-item {
@@ -67,17 +62,13 @@
   align-items: center;
   height: 4rem;
   text-decoration: none;
-  /* filter: blackscale(100%) opacity(0.7); */
 }
 
-.nav-link:hover {
-  /* filter: greyscale(0%) opacity(1); */
-  color: black
-}
-
-.nav-link:active {
-  color: grey
-}
+/* 
+ li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  background-color: #f3f4f6;
+  color: black;
+} */
 
 .nav-link svg {
   min-width: 0.5rem;
@@ -89,8 +80,11 @@ link-text {
   margin-left: 0;
 }
 
-
 @media screen and (max-height: 450px) {
-  .sidebar {padding-top: 10px;}
-  .sidebar a {font-size: 10px;}
+  .sidebar {
+    padding-top: 10px;
+  }
+  .sidebar a {
+    font-size: 10px;
+  }
 }
