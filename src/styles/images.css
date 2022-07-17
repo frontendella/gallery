@@ -87,10 +87,10 @@ a:focus {
 	background-image: url('../img/star_yellow.svg');
 } */
 
-.item__mark[data-favorite="false"]:hover::before,
+/* .item__mark[data-favorite="false"]:hover::before,
 .item__mark[data-favorite="false"]:focus::before {
   opacity: 1;
-}
+} */
 /* 
 .item__mark::after {
 	background-image: url('../img/star_blue.svg');
@@ -113,7 +113,7 @@ a:focus {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  max-width: 800px;
+  max-width: 1300px;
   margin-top: 20px;
 }
 

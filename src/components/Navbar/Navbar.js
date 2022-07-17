@@ -23,9 +23,6 @@ function Navbar() {
   return (
     <>
       <IconContext.Provider value={{ color: "black" }}>
-        {/* <div className="header">
-          <Link to="#" className="menu-bars"></Link>
-        </div> */}
 
         <nav className="sidebar">
         <header>
@@ -33,19 +30,18 @@ function Navbar() {
               <img className="logo" src={logo} alt="Logo" />
             </a>
           </header>
-          <ul>
-            <li>
-              <Link to="/">
-                <HeartIcon />
-                {FavoritesLength} {Favorites}
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                <HeartIcon  stroke="black" color="#e56a77"  /> <span  className="link-text">{FavoritesLength}  {Favorites}</span>
               </Link>
             </li>
             {SidebarData.map((item, index) => {
               return (
-                <li key={index}>
-                  <Link to={item.path}>
+                <li key={index} className="nav-item">
+                  <Link to={item.path} className="nav-link">
                     {item.icon}
-                    <span>{item.title}</span>
+                    <span className="link-text">{item.title}</span>
                   </Link>
                 </li>
               );

@@ -3,42 +3,55 @@
     border-bottom: none;
 }
 
-.movie_detail {
+.item_detail {
     display: flex;
     height: 100%;
     padding: 1rem 0.2rem;
 }
 
-.movie_detail section:nth-child(1) {
+.item_detail section:nth-child(1) {
     margin-right: 2.4rem;
     position: relative;
 }
 
-.movie_detail img {
+.item__description {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.item_detail img {
     width: 270px;
     height: 400px;
 }
 
-.movie_detail section:nth-child(2) {
+.item_detail section:nth-child(2) {
     padding-right: 5px;
 }
 
-.modal-content {
+.item-content {
     height: auto;
     padding: 1rem;
 }
 
-.modal-body {
+.item-body {
     max-width: 800px;
     margin-top: 4rem;
 }
 
+.modal-body {
+    overflow: auto;
+}
+
 .item_title {
     margin-bottom: 2rem;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    letter-spacing: 0.8px;
+    text-align: start;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: .5px;
+    /* color: var(--primary);
+    font-family: "Acme",sans-serif; */
 }
 .btn-close {
     box-shadow: none !important;
