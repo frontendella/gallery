@@ -1,0 +1,27 @@
+.mx-auto {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-top: 1em;
+}
+.page-link {
+  color: black;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-radius: 5px;
+  border: 2px #ddd;
+  margin: 0 4px;
+}
+@media screen and (max-height: 700px) {
+  .page-link {
+    min-width: 0.5em;
+    padding: 0.1em 0.5em;
+  }
+}
+@media screen and (max-width: 700px) {
+  .page-link {
+    min-width: 0.5em;
+    padding: 0.1em 0.5em;
+  }
+}

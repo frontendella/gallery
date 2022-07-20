@@ -77,13 +77,6 @@
   width: 100px;
 }
 
-@media screen and (max-width: 575.98px) {
-  .item__img {
-    max-height: 300px;
-    object-fit: contain;
-  }
-}
-
 .toggelFavorite {
   position: absolute;
   top: 5px;
@@ -93,10 +86,34 @@
 }
 
 .itemlist {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   position: relative;
   min-height: 600px;
   margin-top: 1.5rem;
   justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .items-list__item .item__img {
+    object-fit: contains;
+    height: 50%;
+    width: 60%;
+  }
+  .items-list__item {
+    width: none;
+  }
+  .toggelFavorite {
+    width: 60%;
+    height: 60%;
+    right: 2px;
+  }
+  .item__name {
+    font-size: small;
+    font-weight: normal;
+    width: 80%;
+    margin-top: -60px;
+    margin-left: 40px;
+  }
 }
