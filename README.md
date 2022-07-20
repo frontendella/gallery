@@ -1,4 +1,4 @@
-# Images Gallery with three SideBar categories: "Movies", "Books" and "Albums" 
+# Images Gallery with three SideBar categories: "Movies", "Books" and "Albums" with pages pagination
 
 Ability to "Like" the image and add it to "Favorites" category 
 
