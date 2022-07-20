@@ -52,11 +52,13 @@ link-text {
   margin-left: 0;
 }
 
-@media screen and (max-height: 450px) {
+@media screen and (max-height: 600px) {
   .sidebar {
-    padding-top: 10px;
+    padding-top: 30px;
+    width: 10rem;
   }
-  .sidebar a {
+
+  .sidebar a.nav-link {
     font-size: 10px;
   }
 }

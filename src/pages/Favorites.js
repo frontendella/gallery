@@ -1,12 +1,12 @@
 import { FavoritesContext } from "../context/favorites-context";
 import { useContext, useState } from "react";
+import Dialog from "../components/Dialog";
 import AddFavorites from "../components/AddFavorites";
+import PaginationList from "../components/PaginationList";
 import { Container, Card } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import "../styles/images.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Dialog from "../components/Dialog";
-import PaginationList from "../components/PaginationList";
 
 export const Favorites = () => {
   const { favorites } = useContext(FavoritesContext);
