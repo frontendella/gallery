@@ -93,6 +93,7 @@
 }
 
 .itemlist {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   position: relative;

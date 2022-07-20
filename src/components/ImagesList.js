@@ -23,7 +23,7 @@ function ImagesList({ number, imageName, category, loading }) {
     <Container>
       <h1 className="header__title">{category}</h1>
       {
-        <div className="itemlist">
+        <div className="items-list itemlist">
           {currentImages.map((item) => {
             return (
               <OneItem

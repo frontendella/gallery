@@ -1,7 +1,7 @@
 import { FavoritesContext } from "../context/favorites-context";
 import { useContext, useState } from "react";
 import AddFavorites from "../components/AddFavorites";
-import { Card } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { Modal } from "react-bootstrap";
 import "../styles/images.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -24,7 +24,7 @@ export const Favorites = () => {
   const paginate = (pageNumber) => setcurrentImage(pageNumber);
 
   return (
-    <>
+    <Container>
       <h1 className="header__title"> Favorites </h1>
       {favorites.length > 0 ? (
         <div className="items-list itemlist">
@@ -60,11 +60,15 @@ export const Favorites = () => {
             </div>
           ))}
           <div className="container mt-6">
-            <PaginationList
-              imagesPerPage={imagesPerPage}
-              totalImages={favorites.length}
-              paginate={paginate}
-            />
+            {favorites.length <= 12 ? (
+              <PaginationList />
+            ) : (
+              <PaginationList
+                imagesPerPage={imagesPerPage}
+                totalImages={favorites.length}
+                paginate={paginate}
+              />
+            )}
           </div>
         </div>
       ) : (
@@ -74,6 +78,6 @@ export const Favorites = () => {
           No items in your favorite's list! Add some!
         </h2>
       )}
-    </>
+    </Container>
   );
 };

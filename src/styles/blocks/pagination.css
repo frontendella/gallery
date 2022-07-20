@@ -1,0 +1,14 @@
+.mx-auto {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.page-link {
+  color: black;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-radius: 5px;
+  border: 2px #ddd;
+  margin: 0 4px;
+}
