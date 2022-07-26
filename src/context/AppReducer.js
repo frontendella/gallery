@@ -12,10 +12,6 @@ export default (state, action) => {
           (item) => item.id !== action.payload.id
         ),
       };
-    case "increment":
-      return { totalFavorites: state.totalFavorites + 1 };
-    case "decrement":
-      return { totalFavorites: state.totalFavorites - 1 };
 
     default:
       return state;
