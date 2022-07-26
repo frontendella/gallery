@@ -5,7 +5,6 @@ export const initialState = {
   favorites: localStorage.getItem("favorites")
     ? JSON.parse(localStorage.getItem("favorites"))
     : [],
-  totalFavorites: 0,
 };
 
 export const FavoritesContext = createContext(initialState);
@@ -29,7 +28,6 @@ export const FavoritesContextProvider = (props) => {
     <FavoritesContext.Provider
       value={{
         favorites: state.favorites,
-        totalFavorites: state.totalFavorites,
         addFavoriteHandler,
         removeFavoriteHandler,
       }}

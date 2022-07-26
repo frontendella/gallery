@@ -4,7 +4,6 @@ import Dialog from "../components/Dialog";
 import AddFavorites from "../components/AddFavorites";
 import PaginationList from "../components/PaginationList";
 import { Container, Card } from "react-bootstrap";
-import { Modal } from "react-bootstrap";
 import "../styles/images.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
