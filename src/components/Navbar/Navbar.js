@@ -16,8 +16,8 @@ function Navbar() {
   let Favorites = "Favorites";
   favorites.length > 0
     ? (FavoritesLength = favorites.length) && FavoritesLength === 1
-      ? (Favorites = "Favorite")
-      : (Favorites = "Favorites")
+      ? (Favorites = " Favorite")
+      : (Favorites = " Favorites")
     : (FavoritesLength = "No ");
 
   return (
