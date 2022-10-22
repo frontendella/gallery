@@ -27,7 +27,7 @@ function ImagesList({ number, imageName, category, loading }) {
           {currentImages.map((item) => {
             return (
               <OneItem
-                key={item.url}
+                key={item.id}
                 id={item.id}
                 title={item.title}
                 image={item.image}

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { FavoritesContext } from "../../context/favorites-context";
 import { Link } from "react-router-dom";
 import { SidebarData } from "../../data/SidebarData";
@@ -6,11 +6,9 @@ import { IconContext } from "react-icons";
 import { HeartIcon } from "@heroicons/react/solid";
 import logo from "../../assets/logo.svg";
 import "../../styles/blocks/logo.css";
-import "../../styles/App.css";
 import "./Navbar.css";
 
 function Navbar() {
-  const [sidebar] = useState(true);
   const { favorites } = useContext(FavoritesContext);
   let FavoritesLength = "";
   let Favorites = "Favorites";

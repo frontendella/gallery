@@ -13,7 +13,7 @@ const PaginationList = ({ imagesPerPage, totalImages, paginate }) => {
       <Pagination className="mx-auto justify-content-center">
         {pageNumbers.map((number) => (
           <Pagination.Item key={number} className="page-item">
-            <a onClick={() => paginate(number)} href="" className="page-link">
+            <a onClick={() => paginate(number)} href="/" className="page-link">
               {number}
             </a>
           </Pagination.Item>

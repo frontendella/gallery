@@ -1,9 +1,7 @@
-import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FavoritesContextProvider } from "./context/favorites-context";
 import Navbar from "./components/Navbar/Navbar";
-import PaginationList from "./components/PaginationList";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Favorites } from "./pages/Favorites";
 import Movies from "./pages/Movies";
 import Books from "./pages/Books";
@@ -14,6 +12,7 @@ export default function App() {
     <FavoritesContextProvider>
       <Navbar />
       <Routes>
+        <Route path="/gallery" element={<Favorites />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/" element={<Favorites />} />
         <Route path="/books" element={<Books />} />

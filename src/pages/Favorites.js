@@ -32,19 +32,20 @@ export const Favorites = () => {
               <Card.Img
                 className="item__img"
                 id={item.id}
+                key={item.thumbnailUrl}
                 src={item.image}
                 alt={item.title}
                 onClick={handleShow}
               />
               <AddFavorites
-                key={item.url}
-                image={item.image}
                 id={item.id}
+                key={item.thumbnailUrl}
+                image={item.image}
                 title={item.title}
               />
               <Dialog
                 id={item.id}
-                key={item.url}
+                key={item.thumbnailUrl}
                 image={item.image}
                 title={item.title}
                 show={showStatus}
