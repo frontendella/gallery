@@ -26,9 +26,10 @@ export const Favorites = () => {
     <Container>
       <h1 className="header__title"> Favorites </h1>
       {favorites.length > 0 ? (
-        <div className="items-list itemlist">
-          {currentImages.map((item) => (
-            <div className="items-list__item item">
+        <div className="items-list itemlist" >
+          {currentImages.map((item, index) => (
+
+            <div className="items-list__item item" key={item.thumbnailUrl}>
               <Card.Img
                 className="item__img"
                 id={item.id}

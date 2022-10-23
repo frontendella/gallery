@@ -23,7 +23,7 @@ const OneItem = (props) => {
           onClick={handleShow}
         />
 
-        <AddFavorites key={id} image={image} id={id} title={title} />
+        <AddFavorites key={url} image={image} id={id} title={title} />
 
         <div>
           <div>
@@ -32,7 +32,7 @@ const OneItem = (props) => {
         </div>
       </div>
       <Dialog
-        key={id}
+        key={url}
         image={image}
         id={id}
         title={title}

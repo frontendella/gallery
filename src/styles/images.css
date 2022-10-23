@@ -24,9 +24,10 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-  width: 100%;
+  width: 96%;
   max-width: 1300px;
   margin-top: 20px;
+  margin-left: 85px;
 }
 
 .items-list__item {
@@ -97,8 +98,6 @@
 @media screen and (max-width: 800px) {
   .items-list__item .item__img {
     object-fit: contains;
-    height: 50%;
-    width: 60%;
   }
   .items-list__item {
     width: none;
@@ -111,8 +110,11 @@
   .item__name {
     font-size: small;
     font-weight: normal;
-    width: 80%;
-    margin-top: -60px;
-    margin-left: 40px;
+    width: 92%;
+    margin-top: -14px;
+    margin-left: 6px;
+  }
+  .mx-auto {
+    left: 129px;
   }
 }

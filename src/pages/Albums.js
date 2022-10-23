@@ -1,7 +1,7 @@
 import ImagesList from "../components/ImagesList";
 
 
-const Albums = (category, number) => {
+const Albums = () => {
   return <ImagesList category="Albums" number="1" imageName="album" />;
 };
 

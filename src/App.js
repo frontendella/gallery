@@ -13,8 +13,8 @@ export default function App() {
       <Navbar />
       <Routes>
         <Route path="/gallery" element={<Favorites />} />
-        <Route path="/movies" element={<Movies />} />
         <Route path="/" element={<Favorites />} />
+        <Route path="/movies" element={<Movies />} />
         <Route path="/books" element={<Books />} />
         <Route path="/albums" element={<Albums />} />
       </Routes>

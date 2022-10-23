@@ -9,7 +9,7 @@ const Dialog = (props) => {
           <section>
             <img
               className="item__img"
-              key={props.id}
+              key={props.thumbnailUrl}
               id={props.id}
               src={props.image}
               alt={props.title}

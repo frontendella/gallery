@@ -22,12 +22,10 @@ function Navbar() {
     <>
       <IconContext.Provider value={{ color: "black" }}>
         <nav className="sidebar">
-          <header>
-            <a href="/">
-              <img className="logo" src={logo} alt="Logo" />
-            </a>
-          </header>
           <ul className="navbar-nav">
+            <header>
+              <img className="logo" src={logo} alt="Logo" />
+            </header>
             <li className="nav-item">
               <Link to="/" className="nav-link">
                 <HeartIcon stroke="black" color="#e56a77" />{" "}

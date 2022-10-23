@@ -32,7 +32,9 @@ ul.navbar-nav a:hover {
   align-items: center;
 }
 .nav-item {
-  width: 120%;
+
+  width: 100%;
+
 }
 
 .nav-link {
