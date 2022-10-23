@@ -96,6 +96,12 @@
 }
 
 @media screen and (max-width: 800px) {
+
+  .container{
+    width: 50%;
+    margin-left: 150px;
+  }
+
   .items-list__item .item__img {
     object-fit: contains;
   }
@@ -117,4 +123,14 @@
   .mx-auto {
     left: 129px;
   }
+}
+@media screen and (max-height: 328px) {
+  
+  .container {
+  margin-left: 10px;
+}
+.header__title {
+  text-align: center;
+  margin-left: 100px;
+}
 }
