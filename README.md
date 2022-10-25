@@ -1,4 +1,4 @@
-# [Images Gallery](https://frontendella.github.io/gallery/) 
+# [Images Gallery](https://frontendella.github.io/gallery/)  
 
 * Built in React
 * SideBar categories: "Movies", "Books" and "Albums"
