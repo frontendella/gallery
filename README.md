@@ -1,6 +1,6 @@
 # [Images Gallery](https://frontendella.github.io/gallery/)  
 
-* Built in React
+* Built in React 
 * SideBar categories: "Movies", "Books" and "Albums"
 * Pages pagination
 * Ability to "Like" the image - add it to "Favorites" category
