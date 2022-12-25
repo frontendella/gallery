@@ -5,7 +5,7 @@
 * Pages pagination
 * Ability to "Like" the image - add it to "Favorites" category
 * Ability to remove the image from the "Favorites" category
-* Mobile Responsive
+* Mobile Responsive.  
 
 https://user-images.githubusercontent.com/82247833/196839943-d57cbf5c-d8e3-4856-8347-8511e19f4cb1.mp4
 
