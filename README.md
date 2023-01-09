@@ -3,7 +3,7 @@
 * Built in React     
 * SideBar categories: "Movies", "Books" and "Albums"
 * Pages pagination   
-* Ability to "Like" the image - add it to "Favorites" category
+* Ability to "Like" the image - add it to "Favorites" category  
 * Ability to remove the image from the "Favorites" category
 * Mobile Responsive.  
 
